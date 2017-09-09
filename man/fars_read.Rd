@@ -21,6 +21,9 @@ for data type. Using read_csv, it reads standard and compressed csv.
 The function makes a check if the file exists.
 }
 \examples{
-fars_read(filename)
-        
+\dontrun{
+    filename <- "accident_2015.csv.bz2" 
+    myData <- function(filename)
+}
+ 
 }

@@ -17,6 +17,8 @@ Creates file name in the format of FARS files (accident_YYYY.csv.bz2) where YYYY
 is the year in 4 digit format
 }
 \examples{
-make_filename(2013)
-   
+\dontrun{
+    filename <- make_filename(2013)
+} 
+
 }

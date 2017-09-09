@@ -23,6 +23,8 @@ The function output a warning in case of invalid year.
       If all years are invalid returns a list of NULL
 }
 \examples{
-fars_read_years(c(2013, 2015))
+\dontrun{
+    myData <- fars_read_years(c(2013, 2015))
+    }
 
 }

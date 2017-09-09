@@ -27,6 +27,8 @@ fatal injuries suffered in motor vehicle traffic crashes.
 the function stops if state.num is not present in FARS data.
 }
 \examples{
-fars_map_state(1,2013)
+\dontrun{ 
+    fars_map_state(1,2013) 
+    }
   
 }

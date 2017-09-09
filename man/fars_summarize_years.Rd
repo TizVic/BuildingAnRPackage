@@ -21,6 +21,9 @@ Reporting System, which is a nationwide census providing the American public yea
 fatal injuries suffered in motor vehicle traffic crashes.
 }
 \examples{
-fars_summarize_years(c(2013,2014))
+\dontrun{
+    output <- fars_summarize_years(c(2013,2014))
+    print(output)
+} 
 
 }

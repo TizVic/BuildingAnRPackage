@@ -1,12 +1,17 @@
 Package: farsPackage
 Type: Package
-Title: What the Package Does (Title Case)
+Title: package for statistics on FARS data
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Tiziano Vicentini (TizVic)
+Maintainer: Tiziano Vicentini <tizvic@github.com>
+Description: package created for Coursera Building R Packages course.
+    FARS is US National Highway Traffic Safety Administration's Fatality Analysis 
+    Reporting System, which is a nationwide census providing the American public yearly data regarding 
+    fatal injuries suffered in motor vehicle traffic crashes.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Date:  2017-09-09
+Depends:  R (>= 3.0.0)
+Imports: dplyr, maps, readr, tidyr, magrittr
 RoxygenNote: 6.0.1
