@@ -42,7 +42,7 @@ fars_read <- function(filename) {
 #'
 make_filename <- function(year) {
         year <- as.integer(year)
-        sprintf("data/accident_%d.csv.bz2", year)
+        sprintf("accident_%d.csv.bz2", year)
 }
 
 #' Read FARS files by year(s)
@@ -108,8 +108,8 @@ fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
         dplyr::bind_rows(dat_list) %>% 
                 dplyr::group_by_(~ year, ~ MONTH) %>% 
-                dplyr::summarize_(n = n()) %>%
-                tidyr::spread_(~ year, n)
+                dplyr::summarise_( n = ~ n()) %>%
+                tidyr::spread_(key_col = 'year', value_col = 'n')
 }
 
 #' Draw accidents on a map by year and by state
