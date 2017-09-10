@@ -8,10 +8,13 @@ Description: package created for Coursera Building R Packages course.
     FARS is US National Highway Traffic Safety Administration's Fatality Analysis 
     Reporting System, which is a nationwide census providing the American public yearly data regarding 
     fatal injuries suffered in motor vehicle traffic crashes.
-License: GPL-3
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Date:  2017-09-09
-Depends:  R (>= 3.0.0)
+Date: 2017-09-09
+Depends: R (>= 3.0.0)
 Imports: dplyr, maps, readr, tidyr, magrittr
 RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

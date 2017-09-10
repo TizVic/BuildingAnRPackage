@@ -1,0 +1,111 @@
+---
+title: "farsPackage Vignette"
+author: "TizVic"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{farsPackage Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This package was developed for the course of *Building R Packages* from [Coursera](https://www.coursera.org/learn/r-packages/home/info). 
+
+The package features allow you to load and analyze data from
+US [National Highway Traffic Safety Administration](https://www.nhtsa.gov/)'s Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+Data files are `accident_YYYY.csv.bz2` where *YYYY* is the year in 4 digit format. Data files are in the sub-directory `data` of `extdata`. 
+
+## List of functions
+There are three functions available:
+
+1. `fars_read_years(years)`
+2. `fars_summarize_years(years)`
+3. `fars_map_state(state.num, year)`
+
+----
+
+$\texttt{fars_read_years} \qquad \mathit{\text{A function for read one or multiple years}}$
+
+----
+
+$\mathbf{Description}$
+
+Read one or multiple year from files in the FARS format. It returns a `tibble`.
+
+$\mathbf{Usage}$
+
+$\texttt{fars_read_years(years)}$
+
+$\mathbf{Arguments}$
+
+$\texttt{years}\qquad$  a vector (atomic or list) of integer(s) representing year in 4 digits format                            YYYY.
+
+$\mathbf{Examples} \qquad$ 
+
+Read years 2013 and 2015. Files must be in current directory. 
+
+    myData <- fars_read_years(c(2013, 2015))
+
+----
+
+$\texttt{fars_summarize_years} \qquad \mathit{\text{Summarise number of accidents per month and per year(s)}}$
+
+----
+
+$\mathbf{Description}$
+
+The function calculate from FARS files the number of accidents per month and per year.
+It permits to compare months year by year. 
+
+It returns a `tibble` with months in row, years in column and counts of accidents as data. 
+
+$\mathbf{Usage}$
+
+$\texttt{fars_summarize_years(years)}$
+
+$\mathbf{Arguments}$
+
+$\texttt{years}\qquad$  a vector (atomic or list) of integer(s) representing year in 4 digits format                            YYYY.
+
+$\mathbf{Examples} \qquad$ 
+
+Read years 2013 and 2014. Data files must be in current directory. 
+
+    output <- fars_summarize_years(c(2013,2014))
+    print(output)
+
+
+----
+
+$\texttt{fars_map_state} \qquad \mathit{\text{Draw accidents on a map by year and by state}}$
+
+----
+
+$\mathbf{Description}$
+
+Draws a map of where the incidents of a given year occurred, 
+based on the data of longitude and latitude present in the FARS data.
+
+The function does not return any value but plot a map. 
+
+$\mathbf{Usage}$
+
+$\texttt{fars_map_state(state.num, year)}$
+
+$\mathbf{Arguments}$
+
+$\texttt{state.num}\qquad$      A numeric value with the state number to analyse. 
+                                Must be present in FARS data
+
+$\texttt{year}\qquad$           A numeric representing the year in 4 digits format YYYY.
+                                Must be present in FARS data
+
+
+$\mathbf{Examples} \qquad$ 
+
+Plot the accidents of year 2013 in State of Alabama. Data file must be in current directory. 
+
+    fars_map_state(1,2013) 
+
+
