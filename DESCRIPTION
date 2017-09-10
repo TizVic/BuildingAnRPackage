@@ -16,5 +16,6 @@ Depends: R (>= 3.0.0)
 Imports: dplyr, maps, readr, tidyr, magrittr
 RoxygenNote: 6.0.1
 Suggests: knitr,
-    rmarkdown
+        testthat,
+        rmarkdown
 VignetteBuilder: knitr
